@@ -1,0 +1,132 @@
+:root {
+  --bg: #fafaf7;
+  --fg: #1d1d1b;
+  --muted: #77756e;
+  --card: #ffffff;
+  --border: #e3e1da;
+  --full: #2e9d5b;
+  --min: #e8a928;
+  --miss: #d9534f;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161615;
+    --fg: #eeede8;
+    --muted: #9a988f;
+    --card: #1f1f1d;
+    --border: #33332f;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.app {
+  width: 100%;
+  max-width: 440px;
+  padding: 20px 16px;
+}
+
+h1 { font-size: 20px; margin: 0 0 4px; }
+.subtitle { color: var(--muted); font-size: 13px; margin: 0 0 16px; }
+
+/* Estadísticas */
+.stats { display: flex; gap: 8px; margin-bottom: 14px; }
+.stat {
+  flex: 1;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+.stat strong { display: block; font-size: 22px; }
+.stat span { font-size: 11px; color: var(--muted); }
+
+.hint {
+  font-size: 13px;
+  padding: 10px;
+  border-radius: 8px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+
+/* Navegación del mes */
+.month-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.month-nav h2 { font-size: 16px; margin: 0; text-transform: capitalize; }
+.month-nav button {
+  background: var(--card);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Calendario */
+.grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+.weekday { text-align: center; font-size: 11px; color: var(--muted); padding: 2px 0; }
+
+.day {
+  aspect-ratio: 1;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--fg);
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+}
+.day.empty { visibility: hidden; }
+.day.today { outline: 2px solid var(--fg); }
+.day.full { background: var(--full); border-color: var(--full); color: #fff; }
+.day.min { background: var(--min); border-color: var(--min); color: #222; }
+.day.missed { border-color: var(--miss); color: var(--miss); }
+.day.future { opacity: 0.45; }
+
+/* Leyenda */
+.legend {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--muted);
+  margin: 12px 0;
+}
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.dot.full { background: var(--full); }
+.dot.min { background: var(--min); }
+.dot.missed { border: 1px solid var(--miss); }
+
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Habit Tracker</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<main class="app">
+    	<h1>Calendario de entrenamiento</h1>
+    	<p class="subtitle">Toca un día: completa → mínima → vacío</p>
+ 
+    	<section class="stats">
+      	<div class="stat"><strong id="stat-current">0</strong><span>racha actual</span></div>
+      	<div class="stat"><strong id="stat-best">0</strong><span>mejor racha</span></div>
+      	<div class="stat"><strong id="stat-month">0</strong><span>días este mes</span></div>
+    	</section>
+ 
+    	<p class="hint" id="hint"></p>
+ 
+    	<nav class="month-nav">
+      		<button id="prev" aria-label="Mes anterior">‹</button>
+      		<h2 id="month-title"></h2>
+      		<button id="next" aria-label="Mes siguiente">›</button>
+    	</nav>
+ 
+    	<div class="grid" id="grid"></div>
+ 
+    	<div class="legend">
+      		<span><i class="dot full"></i>Rutina completa</span>
+      		<span><i class="dot min"></i>Versión mínima</span>
+      		<span><i class="dot missed"></i>Día perdido</span>
+    	</div>
+ 
+    	<button class="link-btn" id="reset">Borrar todo</button>
+  	</main>
+ 
+  		<script type="module" src="src/app.js"></script>
+	</body>
+</html>
