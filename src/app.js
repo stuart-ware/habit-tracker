@@ -1,5 +1,5 @@
 import {
-  toKey, isDone, nextStatus, STATUS,
+  toKey, nextStatus, STATUS,
   currentStreak, bestStreak, monthCount, dailyHint,
 } from "./streaks.js";
 
